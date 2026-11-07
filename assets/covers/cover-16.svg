@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Winter Frequency cover art">
+  <defs>
+    <linearGradient id="g15" x1="0" y1="0" x2="1" y2="1" gradientTransform="rotate(135 0.5 0.5)">
+      <stop offset="0%" stop-color="#101820"/>
+      <stop offset="58%" stop-color="#2c3e50"/>
+      <stop offset="100%" stop-color="#101820"/>
+    </linearGradient>
+    <radialGradient id="g15r" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#bdc3c7" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#bdc3c7" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="g15n" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="108"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.10"/></feComponentTransfer>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <clipPath id="g15c"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#g15c)">
+    <rect width="600" height="600" fill="url(#g15)"/>
+    <rect width="600" height="600" fill="url(#g15r)"/>
+    <path d="M -20 192 L 140 319 L 300 307 L 460 192 L 620 460 L 620 620 L -20 620 Z" fill="#bdc3c7" fill-opacity="0.365"/>
+    <circle cx="79" cy="468" r="22" fill="#2ecc71" fill-opacity="0.8"/>
+    <rect width="600" height="600" filter="url(#g15n)" opacity="0.5"/>
+  </g>
+</svg>

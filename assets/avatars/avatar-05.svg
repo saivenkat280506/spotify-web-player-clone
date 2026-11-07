@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Halcyon Drive">
+  <defs>
+    <linearGradient id="a4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5e548e"/><stop offset="100%" stop-color="#231942"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" fill="url(#a4)"/>
+  <circle cx="60" cy="49" r="21" fill="#d9a066"/>
+  <path d="M60 74c-24 0-38 15-42 38h84c-4-23-18-38-42-38z" fill="#818cf8"/>
+  <path d="M39 46c0-15 9-24 21-24s21 9 21 24c0 3-1 5-1 5-2-9-8-12-9-16-4 6-18 9-30 11-1 2-2 4-2 5z" fill="#1b1410"/>
+  
+  
+  <circle cx="60" cy="30" r="9" fill="#1b1410"/>
+  
+</svg>

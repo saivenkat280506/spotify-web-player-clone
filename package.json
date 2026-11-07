@@ -1,0 +1,23 @@
+{
+  "name": "spotify-web-player-clone",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A faithful front-end clone of the Spotify web player, built with vanilla HTML, CSS and JavaScript.",
+  "keywords": [
+    "spotify",
+    "clone",
+    "music-player",
+    "vanilla-js",
+    "static-site"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "start": "python3 -m http.server 8000",
+    "serve": "npx --yes serve -l 8000 .",
+    "test": "python3 tools/test_app.py",
+    "shots": "python3 tools/shoot.py",
+    "art": "python3 tools/gen_covers.py",
+    "test:layout": "python3 tools/test_layout.py"
+  }
+}

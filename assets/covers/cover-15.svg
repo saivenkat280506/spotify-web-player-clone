@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Coral Static cover art">
+  <defs>
+    <linearGradient id="g14" x1="0" y1="0" x2="1" y2="1" gradientTransform="rotate(45 0.5 0.5)">
+      <stop offset="0%" stop-color="#1f1c2c"/>
+      <stop offset="58%" stop-color="#928dab"/>
+      <stop offset="100%" stop-color="#1f1c2c"/>
+    </linearGradient>
+    <radialGradient id="g14r" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#ffcfd2" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffcfd2" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="g14n" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="101"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.10"/></feComponentTransfer>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <clipPath id="g14c"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#g14c)">
+    <rect width="600" height="600" fill="url(#g14)"/>
+    <rect width="600" height="600" fill="url(#g14r)"/>
+    <rect x="-236" y="-120" width="24" height="860" fill="#ffcfd2" fill-opacity="0.475" transform="rotate(-11 300 300)"/><rect x="-177" y="-120" width="22" height="860" fill="#ffcfd2" fill-opacity="0.240" transform="rotate(-11 300 300)"/><rect x="-118" y="-120" width="30" height="860" fill="#ffcfd2" fill-opacity="0.358" transform="rotate(-11 300 300)"/><rect x="-59" y="-120" width="43" height="860" fill="#ffcfd2" fill-opacity="0.475" transform="rotate(-11 300 300)"/><rect x="0" y="-120" width="40" height="860" fill="#ffcfd2" fill-opacity="0.240" transform="rotate(-11 300 300)"/><rect x="59" y="-120" width="38" height="860" fill="#ffcfd2" fill-opacity="0.358" transform="rotate(-11 300 300)"/><rect x="118" y="-120" width="25" height="860" fill="#ffcfd2" fill-opacity="0.475" transform="rotate(-11 300 300)"/><rect x="177" y="-120" width="29" height="860" fill="#ffcfd2" fill-opacity="0.240" transform="rotate(-11 300 300)"/><rect x="236" y="-120" width="36" height="860" fill="#ffcfd2" fill-opacity="0.358" transform="rotate(-11 300 300)"/><rect x="295" y="-120" width="20" height="860" fill="#ffcfd2" fill-opacity="0.475" transform="rotate(-11 300 300)"/><rect x="354" y="-120" width="31" height="860" fill="#ffcfd2" fill-opacity="0.240" transform="rotate(-11 300 300)"/><rect x="413" y="-120" width="18" height="860" fill="#ffcfd2" fill-opacity="0.358" transform="rotate(-11 300 300)"/><rect x="472" y="-120" width="31" height="860" fill="#ffcfd2" fill-opacity="0.475" transform="rotate(-11 300 300)"/>
+    <circle cx="163" cy="330" r="19" fill="#415f91" fill-opacity="0.8"/>
+    <rect width="600" height="600" filter="url(#g14n)" opacity="0.5"/>
+  </g>
+</svg>

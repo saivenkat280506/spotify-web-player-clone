@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Tidal Logic cover art">
+  <defs>
+    <linearGradient id="g29" x1="0" y1="0" x2="1" y2="1" gradientTransform="rotate(135 0.5 0.5)">
+      <stop offset="0%" stop-color="#04293e"/>
+      <stop offset="58%" stop-color="#075985"/>
+      <stop offset="100%" stop-color="#04293e"/>
+    </linearGradient>
+    <radialGradient id="g29r" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="g29n" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="206"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.10"/></feComponentTransfer>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <clipPath id="g29c"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#g29c)">
+    <rect width="600" height="600" fill="url(#g29)"/>
+    <rect width="600" height="600" fill="url(#g29r)"/>
+    <path d="M-20 314 C 130 251, 270 376, 420 276 S 620 314 620 314" fill="none" stroke="#38bdf8" stroke-opacity="0.371" stroke-width="30" stroke-linecap="round"/><path d="M-20 346 C 130 257, 270 434, 420 292 S 620 346 620 346" fill="none" stroke="#38bdf8" stroke-opacity="0.311" stroke-width="24" stroke-linecap="round"/><path d="M-20 372 C 130 319, 270 424, 420 340 S 620 372 620 372" fill="none" stroke="#38bdf8" stroke-opacity="0.251" stroke-width="19" stroke-linecap="round"/>
+    <circle cx="531" cy="60" r="17" fill="#fde68a" fill-opacity="0.8"/>
+    <rect width="600" height="600" filter="url(#g29n)" opacity="0.5"/>
+  </g>
+</svg>

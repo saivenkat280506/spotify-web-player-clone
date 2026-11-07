@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Alternative Pulse cover art">
+  <defs>
+    <linearGradient id="p15" x1="0" y1="0" x2="1" y2="1" gradientTransform="rotate((65, 245) 0.5 0.5)">
+      <stop offset="0%" stop-color="#200122"/>
+      <stop offset="55%" stop-color="#6f0000"/>
+      <stop offset="100%" stop-color="#ffb199"/>
+    </linearGradient>
+    <filter id="p15n" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="200"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.09"/></feComponentTransfer>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <clipPath id="p15c"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#p15c)">
+    <rect width="600" height="600" fill="url(#p15)"/>
+    <path d="M-20 353 C 130 262, 270 444, 420 299 S 620 353 620 353" fill="none" stroke="#e056fd" stroke-opacity="0.387" stroke-width="18" stroke-linecap="round"/><path d="M-20 389 C 130 324, 270 454, 420 350 S 620 389 620 389" fill="none" stroke="#e056fd" stroke-opacity="0.327" stroke-width="29" stroke-linecap="round"/><path d="M-20 409 C 130 327, 270 491, 420 360 S 620 409 620 409" fill="none" stroke="#e056fd" stroke-opacity="0.267" stroke-width="13" stroke-linecap="round"/><path d="M-20 479 C 130 390, 270 568, 420 426 S 620 479 620 479" fill="none" stroke="#e056fd" stroke-opacity="0.207" stroke-width="15" stroke-linecap="round"/>
+    <rect width="600" height="600" filter="url(#p15n)" opacity="0.45"/>
+  </g>
+</svg>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#121212">
+<meta name="description" content="A faithful front-end clone of the Spotify web player, built with vanilla HTML, CSS and JavaScript.">
+<title>Spotify — Web Player: Music for everyone</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<!-- ─────────────────────────── icon sprite ─────────────────────────── -->
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="i-home" viewBox="0 0 24 24"><path fill="currentColor" d="M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20h4.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6H20V7.577l-7.5-4.33zm-2-1.732a3 3 0 0 1 3 0l7.5 4.33a2 2 0 0 1 1 1.732V21a1 1 0 0 1-1 1h-4.5a1 1 0 0 1-1-1v-6h-5v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7.577a2 2 0 0 1 1-1.732l7.5-4.33z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><path fill="currentColor" d="M10.533 1.04a9.5 9.5 0 1 0 5.866 17.32l4.817 4.817a1 1 0 0 0 1.414-1.414l-4.817-4.816A9.5 9.5 0 0 0 10.533 1.04zm0 2a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15z"/></symbol>
+  <symbol id="i-library" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h3.2v18H3zm5 0h3.2v18H8zm5.9 1.4 3.1-.8 3.6 13.9-3.1.8z"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M4 6h16M7 12h10M10 18h4"/></symbol>
+  <symbol id="i-chev-left" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 4.5 7.5 12l7.5 7.5"/></symbol>
+  <symbol id="i-chev-right" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 4.5 16.5 12 9 19.5"/></symbol>
+  <symbol id="i-chev-down" viewBox="0 0 24 24"><path fill="currentColor" d="M12 15.4a1 1 0 0 1-.7-.3l-6.4-6.3a1 1 0 0 1 1.4-1.4L12 13l5.7-5.6a1 1 0 1 1 1.4 1.4l-6.4 6.3a1 1 0 0 1-.7.3z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 4.2a1 1 0 0 1 1.5-.87l11 6.8a1 1 0 0 1 0 1.74l-11 6.8A1 1 0 0 1 7.8 18V4.2z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm12 0a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/></symbol>
+  <symbol id="i-shuffle" viewBox="0 0 24 24"><path fill="currentColor" d="M17 3.5a1 1 0 0 1 0 2h-2.2a4 4 0 0 0-3.4 1.9L5.2 15.7A2 2 0 0 1 3.5 16H2a1 1 0 0 1 0-2h1.5c.5 0 1-.24 1.3-.66l6.2-8.3A6 6 0 0 1 16.1 1.5H17zm4.7 2.8a1 1 0 0 1 1.4 0l2.3 2.3a1 1 0 0 1 0 1.4l-2.3 2.3a1 1 0 0 1-1.4-1.4L23 9.5H17a1 1 0 0 0-.83.45l-1.2 1.6a1 1 0 0 1-1.7-.1 1 1 0 0 1 .05-1.36l1.2-1.6A4 4 0 0 1 17.8 6.5H23l-1.1-1.1a1 1 0 0 1 0-1.4zM2 8a1 1 0 0 1 0-2h1.5c.5 0 1 .24 1.3.66l.85 1.14a1 1 0 0 1-1.6 1.2l-.85-1.14A.83.83 0 0 0 2.66 8zm4.4 6.8a1 1 0 0 1 0 1.4l-.75 1a1 1 0 0 1-1.4 0l-2.3-2.3a1 1 0 0 1 0-1.4l2.3-2.3a1 1 0 0 1 1.4 0l2.3 2.3a1 1 0 0 1 0 1.4zm3.6 1.6a1 1 0 0 1-.1 1.36 1 1 0 0 1-1.4.1l-1.2-1.6A4 4 0 0 0 4.5 16H7a1 1 0 0 1 0 2H4.5a6 6 0 0 1-5.1-2.9l1.2-1.6a2 2 0 0 1 1.6-.8h2.6a1 1 0 0 1 .83.45z"/></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24"><path fill="currentColor" d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/></symbol>
+  <symbol id="i-vol-high" viewBox="0 0 24 24"><path fill="currentColor" d="M11 4.2v15.6a1 1 0 0 1-1.6.8L4.6 17H2a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h2.6l4.8-3.6a1 1 0 0 1 1.6.8zm4.3 1.8a1 1 0 0 1 1.4.1 6.4 6.4 0 0 1 0 9.8 1 1 0 1 1-1.3-1.5 4.4 4.4 0 0 0 0-6.8 1 1 0 0 1-.1-1.6zm2.9-2.7a1 1 0 0 1 1.4 0 10.4 10.4 0 0 1 0 15.4 1 1 0 1 1-1.4-1.4 8.4 8.4 0 0 0 0-12.6 1 1 0 0 1 0-1.4z"/></symbol>
+  <symbol id="i-vol-low" viewBox="0 0 24 24"><path fill="currentColor" d="M11 4.2v15.6a1 1 0 0 1-1.6.8L4.6 17H2a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h2.6l4.8-3.6a1 1 0 0 1 1.6.8zm4.6 4.4a1 1 0 0 1 1.4 0 3 3 0 0 1 0 4.2 1 1 0 0 1-1.4-1.4 1 1 0 0 0 0-1.4 1 1 0 0 1 0-1.4z"/></symbol>
+  <symbol id="i-mute" viewBox="0 0 24 24"><path fill="currentColor" d="M11 4.2v15.6a1 1 0 0 1-1.6.8L4.6 17H2a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h2.6l4.8-3.6a1 1 0 0 1 1.6.8zm4.3 1.8a1 1 0 0 1 1.4.1 6.4 6.4 0 0 1 0 9.8 1 1 0 1 1-1.3-1.5 4.4 4.4 0 0 0 0-6.8 1 1 0 0 1-.1-1.6zM19.7 12.7a1 1 0 0 1 0 1.4l-1.4 1.4 1.4 1.4a1 1 0 0 1-1.4 1.4L17 17l-1.3 1.3a1 1 0 0 1-1.4-1.4l1.3-1.4-1.3-1.3a1 1 0 0 1 1.4-1.4l1.3 1.3 1.4-1.4a1 1 0 0 1 1.3 0z"/></symbol>
+  <symbol id="i-queue" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H4v3a1 1 0 0 1-2 0V6zm0 6a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H4v3a1 1 0 0 1-2 0v-4zm0 6a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H4v2a1 1 0 0 1-2 0v-3zm5-12a1 1 0 0 1 1-1h12a1 1 0 0 1 0 2H9a1 1 0 0 1-1-1zm0 6a1 1 0 0 1 1-1h12a1 1 0 0 1 0 2H9a1 1 0 0 1-1-1zm0 6a1 1 0 0 1 1-1h8a1 1 0 0 1 0 2H9a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="i-device" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4zm1 1v9h14V5H5zm7 13h4a1 1 0 1 1 0 2h-4a1 1 0 1 1 0-2z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" d="M12 20.4S3.2 15 3.2 9.6A4.9 4.9 0 0 1 12 6.4a4.9 4.9 0 0 1 8.8 3.2c0 5.4-8.8 10.8-8.8 10.8z"/></symbol>
+  <symbol id="i-heart-fill" viewBox="0 0 24 24"><path fill="currentColor" d="M12 20.4S3.2 15 3.2 9.6A4.9 4.9 0 0 1 12 6.4a4.9 4.9 0 0 1 8.8 3.2c0 5.4-8.8 10.8-8.8 10.8z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a1 1 0 0 1 1 1v7h7a1 1 0 1 1 0 2h-7v7a1 1 0 1 1-2 0v-7H4a1 1 0 1 1 0-2h7V4a1 1 0 0 1 1-1z"/></symbol>
+  <symbol id="i-dots" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="19" r="2" fill="currentColor"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2" fill="currentColor"/><rect x="13" y="3" width="8" height="8" rx="2" fill="currentColor"/><rect x="3" y="13" width="8" height="8" rx="2" fill="currentColor"/><rect x="13" y="13" width="8" height="8" rx="2" fill="currentColor"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><rect x="3" y="4" width="5" height="5" rx="1" fill="currentColor"/><rect x="10" y="5" width="11" height="3" rx="1.5" fill="currentColor"/><rect x="3" y="10" width="5" height="5" rx="1" fill="currentColor"/><rect x="10" y="11" width="11" height="3" rx="1.5" fill="currentColor"/><rect x="3" y="16" width="5" height="5" rx="1" fill="currentColor"/><rect x="10" y="17" width="11" height="3" rx="1.5" fill="currentColor"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="currentColor" d="M9.5 16.6 5 12.1l1.4-1.4 3.1 3.1 8-8L19 7.2z"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path fill="currentColor" d="M11 3h2v9.2l3.3-3.3 1.4 1.4-5.7 5.7-5.7-5.7 1.4-1.4L11 12.2V3zM4 18h16v2H4z"/></symbol>
+  <symbol id="i-expand" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h7v2H6v5H4V4zm9 0h7v7h-2V6h-5V4zM4 13h2v5h5v2H4v-7zm14 0h2v7h-7v-2h5v-5z"/></symbol>
+  <symbol id="i-lyrics" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16v2H4zm0 5h11v2H4zm0 5h16v2H4zm0 5h11v2H4z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M14.5 2.5 21.5 9.5l-3 1-4 4-1 5-2-2-2 2-1.5-6-2.5-1.5 5-1 4-4z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm-1 2v6.4l4.5 2.6 1-1.7-3.5-2V6h-2z"/></symbol>
+</svg>
+
+<!-- ─────────────────────────── app shell ─────────────────────────── -->
+<div class="app" id="app">
+
+  <!-- sidebar -->
+  <aside class="sidebar" id="sidebar" aria-label="Primary">
+    <div class="sidebar__head">
+      <a class="brand" href="#" data-route="home" aria-label="Spotify home">
+        <svg class="brand__mark" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="12" fill="currentColor"/>
+          <path d="M6.1 9.3c3.9-1 8.1-.7 11.7 1.2M7.3 12.6c3.1-.8 6.6-.5 9.5 1M8.4 15.7c2.4-.6 5-.3 7.3.9"
+                fill="none" stroke="#121212" stroke-width="1.9" stroke-linecap="round"/>
+        </svg>
+        <span class="brand__word">Spotify</span>
+      </a>
+      <button class="icon-btn icon-btn--ghost" id="collapseBtn" aria-label="Collapse sidebar" title="Collapse sidebar">
+        <svg class="ic"><use href="#i-chev-left"></use></svg>
+      </button>
+    </div>
+
+    <nav class="sidenav">
+      <a class="sidenav__link is-active" href="#" data-route="home"><svg class="ic"><use href="#i-home"></use></svg><span>Home</span></a>
+      <a class="sidenav__link" href="#" data-route="search"><svg class="ic"><use href="#i-search"></use></svg><span>Search</span></a>
+      <a class="sidenav__link" href="#" data-route="library"><svg class="ic"><use href="#i-library"></use></svg><span>Your Library</span></a>
+    </nav>
+
+    <div class="sidebar__tools">
+      <button class="pill pill--outline" id="createBtn"><svg class="ic ic--sm"><use href="#i-plus"></use></svg><span>Create playlist</span></button>
+      <button class="icon-btn icon-btn--ghost" id="filterBtn" aria-pressed="false" aria-label="Filter library" title="Filter library"><svg class="ic"><use href="#i-filter"></use></svg></button>
+    </div>
+
+    <ul class="liblist" id="libraryList"></ul>
+
+    <div class="sidebar__foot">
+      <a class="footlink" href="#">Legal</a>
+      <a class="footlink" href="#">Privacy</a>
+      <a class="footlink" href="#">Safety</a>
+      <a class="footlink" href="#">Cookies</a>
+      <a class="footlink" href="#">About Ads</a>
+      <a class="footlink" href="#">Accessibility</a>
+    </div>
+  </aside>
+
+  <!-- main -->
+  <main class="main">
+    <header class="topbar" id="topbar">
+      <div class="topbar__lead">
+        <button class="icon-btn icon-btn--nav" id="navToggle" aria-label="Toggle navigation" data-tip="Menu"><svg class="ic"><use href="#i-chev-left"></use></svg></button>
+        <div class="history">
+          <button class="icon-btn" id="backBtn" aria-label="Go back" data-tip="Go back"><svg class="ic"><use href="#i-chev-left"></use></svg></button>
+          <button class="icon-btn" id="fwdBtn" aria-label="Go forward" data-tip="Go forward"><svg class="ic"><use href="#i-chev-right"></use></svg></button>
+        </div>
+        <div class="topbar__mini" id="topbarMini" aria-hidden="true"></div>
+      </div>
+
+      <div class="topbar__search">
+        <div class="search" role="search">
+          <svg class="ic search__icon"><use href="#i-search"></use></svg>
+          <input id="searchInput" type="search" placeholder="What do you want to play?" aria-label="Search" autocomplete="off" spellcheck="false">
+          <button class="search__clear" id="clearSearch" aria-label="Clear search" hidden><svg class="ic ic--sm"><use href="#i-close"></use></svg></button>
+        </div>
+      </div>
+
+      <div class="topbar__actions">
+        <button class="pill pill--ghost" id="upgradeBtn">Upgrade</button>
+        <button class="pill pill--ghost" id="installBtn">Install App</button>
+        <button class="profile" id="profileBtn" aria-label="Account"><span>K</span></button>
+      </div>
+    </header>
+
+    <div class="canvas" id="canvas">
+      <div class="view" id="view"></div>
+    </div>
+  </main>
+
+  <!-- friend activity -->
+  <aside class="social" id="social" aria-label="Friend activity">
+    <header class="social__head">
+      <h2>Friend Activity</h2>
+      <button class="icon-btn icon-btn--ghost" id="socialClose" aria-label="Close friend activity"><svg class="ic ic--sm"><use href="#i-chev-right"></use></svg></button>
+    </header>
+    <div class="social__scroll" id="socialList"></div>
+    <div class="social__foot">
+      <div class="social__me">
+        <span class="social__avatar" style="--a:#1DB954">K</span>
+        <div><strong>You</strong><small>Kaya Mori</small></div>
+      </div>
+      <button class="pill pill--outline" id="socialInvite">Invite friends</button>
+    </div>
+  </aside>
+</div>
+
+<!-- ─────────────────────────── player bar ─────────────────────────── -->
+<footer class="player" id="player" aria-label="Player">
+  <div class="player__track">
+    <button class="npcover npcover--btn" id="npCover" aria-label="Open now playing view" data-tip="Now playing"><img id="npCoverImg" alt="" src="assets/covers/cover-01.svg"><span class="npcover__eq" id="npEq" hidden><i></i><i></i><i></i><i></i></span></button>
+    <div class="npmeta">
+      <a class="npmeta__title" id="npTitle" href="#">Neon Rain</a>
+      <a class="npmeta__artist" id="npArtist" href="#">Kaya Mori</a>
+    </div>
+    <button class="icon-btn icon-btn--ghost np__like" id="likeBtn" aria-label="Save to your library" aria-pressed="false" data-tip="Save"><svg class="ic"><use href="#i-heart"></use></svg></button>
+  </div>
+
+  <div class="player__center">
+    <div class="controls">
+      <button class="icon-btn icon-btn--ghost ctl ctl--toggle" id="shuffleBtn" aria-label="Shuffle" aria-pressed="false" data-tip="Shuffle"><svg class="ic"><use href="#i-shuffle"></use></svg></button>
+      <button class="icon-btn icon-btn--ghost ctl" id="prevBtn" aria-label="Previous" data-tip="Previous"><svg class="ic"><use href="#i-chev-left"></use></svg></button>
+      <button class="playbtn" id="playBtn" aria-label="Play"><svg class="ic ic--lg"><use href="#i-play"></use></svg></button>
+      <button class="icon-btn icon-btn--ghost ctl" id="nextBtn" aria-label="Next" data-tip="Next"><svg class="ic"><use href="#i-chev-right"></use></svg></button>
+      <button class="icon-btn icon-btn--ghost ctl ctl--toggle" id="repeatBtn" aria-label="Repeat" aria-pressed="false" data-tip="Repeat"><svg class="ic"><use href="#i-repeat"></use></svg></button>
+    </div>
+    <div class="scrub">
+      <span class="scrub__time" id="elapsed">0:00</span>
+      <div class="track" id="progressTrack" role="slider" tabindex="0" aria-label="Playback position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="track__fill" id="progressFill"><span class="track__knob"></span></div>
+      </div>
+      <span class="scrub__time" id="duration">3:38</span>
+    </div>
+  </div>
+
+  <div class="player__right">
+    <button class="icon-btn icon-btn--ghost" id="nowViewBtn" aria-label="Open now playing view" data-tip="Full screen"><svg class="ic"><use href="#i-expand"></use></svg></button>
+    <button class="icon-btn icon-btn--ghost" id="lyricsBtn" aria-label="Lyrics" aria-pressed="false" data-tip="Lyrics"><svg class="ic"><use href="#i-lyrics"></use></svg></button>
+    <div class="volume">
+      <button class="icon-btn icon-btn--ghost" id="muteBtn" aria-label="Mute" data-tip="Mute"><svg class="ic" id="volIcon"><use href="#i-vol-high"></use></svg></button>
+      <div class="track track--vol" id="volumeTrack" role="slider" tabindex="0" aria-label="Volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70">
+        <div class="track__fill" id="volumeFill"><span class="track__knob"></span></div>
+      </div>
+    </div>
+    <button class="icon-btn icon-btn--ghost" id="deviceBtn" aria-label="Connect to a device" data-tip="Devices"><svg class="ic"><use href="#i-device"></use></svg></button>
+    <button class="icon-btn icon-btn--ghost" id="queueBtn" aria-label="Queue" data-tip="Queue"><svg class="ic"><use href="#i-queue"></use></svg></button>
+  </div>
+</footer>
+
+<!-- ──────────────────── full-screen now playing (signature) ──────────────────── -->
+<section class="now" id="nowView" aria-hidden="true" aria-label="Now playing view">
+  <div class="now__bg" id="nowBg"></div>
+  <div class="now__wash"></div>
+  <header class="now__head">
+    <button class="icon-btn icon-btn--ghost" id="nowClose" aria-label="Close now playing view"><svg class="ic"><use href="#i-chev-down"></use></svg></button>
+    <div class="now__origin"><span id="nowOrigin">Playlist</span><em id="nowOriginName">—</em></div>
+    <button class="icon-btn icon-btn--ghost" id="nowMore" aria-label="More options"><svg class="ic"><use href="#i-dots"></use></svg></button>
+  </header>
+
+  <div class="now__body">
+    <div class="now__stage">
+      <div class="now__art" id="nowArt"><img id="nowArtImg" src="assets/covers/cover-01.svg" alt="Album artwork"></div>
+      <div class="now__under">
+        <h2 id="nowTitle">Neon Rain</h2>
+        <p id="nowArtist">Kaya Mori</p>
+      </div>
+    </div>
+
+    <div class="now__side">
+      <div class="now__tabs">
+        <button class="now__tab is-active" data-pane="lyrics">Lyrics</button>
+        <button class="now__tab" data-pane="about">About</button>
+        <button class="now__tab" data-pane="upnext">Up next</button>
+      </div>
+      <div class="now__pane is-active" id="paneLyrics"><div class="lyrics" id="lyricsBody"></div></div>
+      <div class="now__pane" id="paneAbout"><div class="about" id="aboutBody"></div></div>
+      <div class="now__pane" id="paneUpnext"><div class="upnext" id="upnextBody"></div></div>
+    </div>
+  </div>
+
+  <footer class="now__foot">
+    <div class="spectrum" id="spectrum" aria-hidden="true"></div>
+    <div class="now__controls">
+      <button class="icon-btn icon-btn--ghost ctl ctl--toggle" id="nowShuffle" aria-label="Shuffle" aria-pressed="false"><svg class="ic"><use href="#i-shuffle"></use></svg></button>
+      <button class="icon-btn icon-btn--ghost ctl" id="nowPrev" aria-label="Previous"><svg class="ic"><use href="#i-chev-left"></use></svg></button>
+      <button class="playbtn playbtn--lg" id="nowPlay" aria-label="Play"><svg class="ic ic--xl"><use href="#i-play"></use></svg></button>
+      <button class="icon-btn icon-btn--ghost ctl" id="nowNext" aria-label="Next"><svg class="ic"><use href="#i-chev-right"></use></svg></button>
+      <button class="icon-btn icon-btn--ghost ctl ctl--toggle" id="nowRepeat" aria-label="Repeat" aria-pressed="false"><svg class="ic"><use href="#i-repeat"></use></svg></button>
+    </div>
+    <div class="scrub scrub--wide">
+      <span class="scrub__time" id="nowElapsed">0:00</span>
+      <div class="track" id="nowProgressTrack" role="slider" tabindex="0" aria-label="Playback position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="track__fill" id="nowProgressFill"><span class="track__knob"></span></div>
+      </div>
+      <span class="scrub__time" id="nowDuration">3:38</span>
+    </div>
+  </footer>
+</section>
+
+<!-- mobile bottom navigation -->
+<nav class="mobilenav" id="mobileNav" aria-label="Mobile">
+  <a class="mobilenav__link is-active" href="#" data-route="home"><svg class="ic"><use href="#i-home"></use></svg><span>Home</span></a>
+  <a class="mobilenav__link" href="#" data-route="search"><svg class="ic"><use href="#i-search"></use></svg><span>Search</span></a>
+  <a class="mobilenav__link" href="#" data-route="library"><svg class="ic"><use href="#i-library"></use></svg><span>Library</span></a>
+</nav>
+
+<!-- ─────────────────── command palette ─────────────────── -->
+<div class="cmdpal" id="cmdpal" hidden>
+  <div class="cmdpal__scrim" data-action="close-cmdpal"></div>
+  <div class="cmdpal__card" role="dialog" aria-modal="true" aria-label="Command palette">
+    <div class="cmdpal__inputwrap">
+      <svg class="ic"><use href="#i-search"></use></svg>
+      <input class="cmdpal__input" id="cmdpalInput" placeholder="Search or jump to…" autocomplete="off" spellcheck="false">
+      <kbd>esc</kbd>
+    </div>
+    <div class="cmdpal__list" id="cmdpalList"></div>
+  </div>
+</div>
+
+<!-- ─────────────────── context menu ─────────────────── -->
+<div class="menu" id="contextMenu" hidden role="menu"></div>
+
+<!-- ─────────────────── queue panel ─────────────────── -->
+<aside class="queuepanel" id="queuePanel" aria-hidden="true" aria-label="Queue">
+  <header class="queuepanel__head">
+    <h2>Queue</h2>
+    <button class="icon-btn icon-btn--ghost" id="queueClose" aria-label="Close queue"><svg class="ic"><use href="#i-close"></use></svg></button>
+  </header>
+  <div class="queuepanel__body">
+    <div class="queuepanel__section" id="queueNow"></div>
+    <div class="queuepanel__section" id="queueNext"></div>
+  </div>
+</aside>
+
+<!-- ─────────────────── device popover ─────────────────── -->
+<div class="popover" id="devicePopover" hidden role="menu" aria-label="Connect to a device"></div>
+
+<!-- ─────────────────── modal ─────────────────── -->
+<div class="modal" id="modal" hidden>
+  <div class="modal__scrim" data-action="close-modal"></div>
+  <div class="modal__card" id="modalCard" role="dialog" aria-modal="true"></div>
+</div>
+
+<!-- ─────────────────── keyboard shortcuts ─────────────────── -->
+<div class="shortcuts" id="shortcuts" hidden role="dialog" aria-modal="true" aria-label="Keyboard shortcuts">
+  <div class="shortcuts__scrim" data-action="close-shortcuts"></div>
+  <div class="shortcuts__card" id="shortcutsCard"></div>
+</div>
+
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

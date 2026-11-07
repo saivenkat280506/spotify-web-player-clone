@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Sofia Benedetti">
+  <defs>
+    <linearGradient id="a15" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2c3e50"/><stop offset="100%" stop-color="#101820"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" fill="url(#a15)"/>
+  <circle cx="60" cy="49" r="21" fill="#7a4a2c"/>
+  <path d="M60 74c-24 0-38 15-42 38h84c-4-23-18-38-42-38z" fill="#fbbf24"/>
+  <path d="M39 46c0-15 9-24 21-24s21 9 21 24c0 3-1 5-1 5-2-9-8-12-9-16-4 6-18 9-30 11-1 2-2 4-2 5z" fill="#5a3825"/>
+  
+  
+  
+  <path d="M34 52h9v9h-9zM77 52h9v9h-9z" fill="#5a3825" fill-opacity="0.75"/>
+</svg>

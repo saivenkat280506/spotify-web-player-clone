@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+package-lock.json
+
+# tooling output
+.shots/
+preview/*.png
+!preview/home.jpg
+
+# python
+__pycache__/
+*.py[cod]
+
+# os / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# env & secrets — never commit credentials
+.env
+.env.*
+!.env.example
+.vercel

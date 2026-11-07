@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Coastal Weekend cover art">
+  <defs>
+    <linearGradient id="p12" x1="0" y1="0" x2="1" y2="1" gradientTransform="rotate((205, 25) 0.5 0.5)">
+      <stop offset="0%" stop-color="#31081f"/>
+      <stop offset="55%" stop-color="#852f3c"/>
+      <stop offset="100%" stop-color="#ffd8a8"/>
+    </linearGradient>
+    <filter id="p12n" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="161"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.09"/></feComponentTransfer>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <clipPath id="p12c"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#p12c)">
+    <rect width="600" height="600" fill="url(#p12)"/>
+    <path d="M-20 449 C 130 345, 270 553, 420 386 S 620 449 620 449" fill="none" stroke="#e56b6f" stroke-opacity="0.516" stroke-width="30" stroke-linecap="round"/><path d="M-20 493 C 130 413, 270 573, 420 445 S 620 493 620 493" fill="none" stroke="#e56b6f" stroke-opacity="0.456" stroke-width="28" stroke-linecap="round"/><path d="M-20 509 C 130 465, 270 553, 420 483 S 620 509 620 509" fill="none" stroke="#e56b6f" stroke-opacity="0.396" stroke-width="24" stroke-linecap="round"/><path d="M-20 578 C 130 503, 270 653, 420 533 S 620 578 620 578" fill="none" stroke="#e56b6f" stroke-opacity="0.336" stroke-width="30" stroke-linecap="round"/><path d="M-20 561 C 130 479, 270 644, 420 512 S 620 561 620 561" fill="none" stroke="#e56b6f" stroke-opacity="0.276" stroke-width="16" stroke-linecap="round"/>
+    <rect width="600" height="600" filter="url(#p12n)" opacity="0.45"/>
+  </g>
+</svg>
