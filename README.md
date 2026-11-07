@@ -5,7 +5,24 @@ JavaScript**. No frameworks, no build step, no dependencies — open `index.html
 
 **Live demo → https://77ebz2t2wokan.space.mcode.io**
 
-![Spotify web player clone — home view](preview/home.jpg)
+Every album cover, avatar and playlist tile in this project is generated procedurally by
+`tools/gen_covers.py` — 16 palettes × 8 shape grammars, 76 SVGs, zero scraped assets:
+
+<p align="center">
+  <img src="assets/covers/cover-01.svg" width="118" alt="">
+  <img src="assets/covers/cover-07.svg" width="118" alt="">
+  <img src="assets/covers/cover-14.svg" width="118" alt="">
+  <img src="assets/covers/cover-22.svg" width="118" alt="">
+  <img src="assets/covers/cover-31.svg" width="118" alt="">
+  <img src="assets/covers/cover-44.svg" width="118" alt="">
+</p>
+
+<p align="center">
+  <img src="assets/avatars/avatar-03.svg" width="78" alt="">
+  <img src="assets/avatars/avatar-11.svg" width="78" alt="">
+  <img src="assets/avatars/avatar-19.svg" width="78" alt="">
+  <img src="assets/avatars/avatar-24.svg" width="78" alt="">
+</p>
 
 ---
 
