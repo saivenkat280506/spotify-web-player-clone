@@ -13,8 +13,8 @@ Every album cover, avatar and playlist tile in this project is generated procedu
   <img src="assets/covers/cover-07.svg" width="118" alt="">
   <img src="assets/covers/cover-14.svg" width="118" alt="">
   <img src="assets/covers/cover-22.svg" width="118" alt="">
-  <img src="assets/covers/cover-31.svg" width="118" alt="">
-  <img src="assets/covers/cover-44.svg" width="118" alt="">
+  <img src="assets/covers/cover-29.svg" width="118" alt="">
+  <img src="assets/covers/playlist-05.svg" width="118" alt="">
 </p>
 
 <p align="center">
